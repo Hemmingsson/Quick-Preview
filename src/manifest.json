@@ -1,0 +1,51 @@
+{
+  "name": "Quick Preview for Soundcloud",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "description": "Just Hover the ▶️ Button to Preview Music on Soundcloud",
+  "homepage_url": "http://mattias.lol",
+  "author": "Mattias Hemmingsson",
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "default_locale": "en",
+  "permissions": [
+    "https://soundcloud.com/*",
+    "tabs"
+  ],
+    "browser_action": {
+    "default_icon": "icons/icon32.png",
+    "default_title": "Quick Preview for Soundcloud",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://soundcloud.com/*"
+      ],
+      "css": [
+        "inject/inject.css"
+      ]
+    },
+    {
+      "matches": [
+        "https://soundcloud.com/*"
+      ],
+      "js": [
+        "inject/sentinel.min.js"
+      ]
+    },
+    {
+      "matches": [
+        "https://soundcloud.com/*"
+      ],
+      "js": [
+        "inject/inject.js"
+      ]
+    }
+    
+  ]
+}
