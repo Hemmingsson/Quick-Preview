@@ -1,9 +1,9 @@
+
+![Screen Shot](assets/Promo-github.png?raw=true)
+
 # Quick Preview for Soundcloud ☁️
 
 Chrome Extension for Previewing Music on Soundcloud Just by Hovering the ▶️ Button
-
-![Screen Shot](assets/Promo-webstore.png?raw=true)
-
 
 ## How to install?
 
