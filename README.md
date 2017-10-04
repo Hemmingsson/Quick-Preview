@@ -4,6 +4,7 @@
 # Quick Preview for Soundcloud ☁️
 
 Chrome Extension for previewing music on Soundcloud just by hovering the play button.
+To preview a track without loosing what your currently listening to, just hover the play button with your mouse and listen to four quick samples of that sound.
 
 ## How to install?
 
