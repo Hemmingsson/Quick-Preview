@@ -1,4 +1,7 @@
-# Quick Preview for Soundcloud ☁️
+# Quick Preview for Soundcloud [![Weekly Users](https://img.shields.io/chrome-web-store/users/lghceigagnfccdnkpdfbbhjjegijbjmp.svg)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp)
+
+
+
 
 ![Screen Shot](assets/Promo-github.png?raw=true)
 
