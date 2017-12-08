@@ -1,4 +1,8 @@
-# Quick Preview for Soundcloud [![Weekly Users](https://img.shields.io/chrome-web-store/users/lghceigagnfccdnkpdfbbhjjegijbjmp.svg)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp)
+# Quick Preview for Soundcloud [![Version](https://img.shields.io/chrome-web-store/v/lghceigagnfccdnkpdfbbhjjegijbjmp.svg)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp) [![Weekly Users](https://img.shields.io/chrome-web-store/users/lghceigagnfccdnkpdfbbhjjegijbjmp.svg)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp)
+
+
+
+	
 
 
 
