@@ -1,4 +1,4 @@
-# Quick Preview for Soundcloud [![Version](https://img.shields.io/chrome-web-store/v/lghceigagnfccdnkpdfbbhjjegijbjmp.svg)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp) [![Weekly Users](https://img.shields.io/chrome-web-store/users/lghceigagnfccdnkpdfbbhjjegijbjmp.svg?label=weekly+active+users)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp)
+# Quick Preview for Soundcloud [![Version](https://img.shields.io/chrome-web-store/v/lghceigagnfccdnkpdfbbhjjegijbjmp.svg)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp) [![Version](https://img.shields.io/chrome-web-store/stars/lghceigagnfccdnkpdfbbhjjegijbjmp.svg)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp) [![Weekly Users](https://img.shields.io/chrome-web-store/users/lghceigagnfccdnkpdfbbhjjegijbjmp.svg?label=weekly+active+users)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp)
 
 
 
