@@ -7,7 +7,7 @@
 
 
 
-![Screen Shot](assets/Promo-github.png?raw=true)
+![Screen Shot](https://cdn.rawgit.com/Hemmingsson/Quick-Preview/6ef85095/assets/Promo-github.png)
 
 
 To preview a track without loosing what your currently listening to, just hover the play button with your mouse and listen to four samples from that sound.
