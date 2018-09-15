@@ -16,5 +16,9 @@ To preview a track without loosing what your currently listening to, just hover 
 
 You can install Quick Preview through the Chrome web store: 
 
-[![Install Extension](https://developer.chrome.com/webstore/images/ChromeWebStore_Badge_v2_340x96.png)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp)
+<a href="https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp">
+    <img src="https://github.com/Hemmingsson/Freeze/raw/master/resources/CWS-dl.png" width="320">
+ </a>
+
+
 
