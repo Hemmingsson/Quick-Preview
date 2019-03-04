@@ -15,9 +15,8 @@ Quickly evaluate tracks & mixtapes before you hit play. Listen to short samples 
 
 
 
-### How to install
+### Install Quick Preview through the Chrome Web Store
 
-Install Quick Preview through the Chrome Web Store: 
 
 <a href="https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp">
     <img src="https://github.com/Hemmingsson/Freeze/raw/master/resources/CWS-dl.png" width="320">
