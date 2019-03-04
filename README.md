@@ -12,7 +12,9 @@
 
 Quickly evaluate tracks & mixtapes before you hit play. Listen to short samples by hovering any play button.
 
-## How to install
+
+
+### How to install
 
 You can install Quick Preview through the Chrome web store: 
 
