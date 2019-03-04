@@ -7,7 +7,7 @@
 
 
 
-![Screen Shot](https://cdn.rawgit.com/Hemmingsson/Quick-Preview/6ef85095/assets/Promo-github.png)
+![Screen Shot](https://i.imgur.com/qSU9Mh9.jpg)
 
 
 To preview a track without loosing what your currently listening to, just hover the play button with your mouse and listen to four samples from that sound.
@@ -19,6 +19,4 @@ You can install Quick Preview through the Chrome web store:
 <a href="https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp">
     <img src="https://github.com/Hemmingsson/Freeze/raw/master/resources/CWS-dl.png" width="320">
  </a>
-
-
 
