@@ -15,7 +15,7 @@ Quickly evaluate tracks & mixtapes before you hit play. Listen to short samples 
 
 
 
-### How To Install
+## How To Install
 
 Install Quick Preview through the Chrome Web Store
 
