@@ -11,8 +11,10 @@
 
 
 
-Quickly evaluate tracks & mixtapes before you hit play. 
+Quickly evaluate tracks & mixtapes before you hit play.
+
 Choose the number of sample points, and their duration, in the preference menu. 
+
 Listen to the samples by hovering any play button.
 
 
