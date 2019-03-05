@@ -13,7 +13,7 @@
 
 Quickly evaluate tracks & mixtapes before you hit play.<br>
 Choose the number of sample points, and their duration, in the preference menu.<br>
-Listen to the samples by hovering any play button.
+Listen to the samples by hovering (almost) any play button on SoundCloud.
 
 
 
