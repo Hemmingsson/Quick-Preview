@@ -19,7 +19,7 @@ Listen to the samples by hovering (almost) any play button on SoundCloud.
 
 ## How To Install
 
-Install Quick Preview through the Chrome Web Store
+Install the extension through Chrome Web Store
 
 <a href="https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp">
     <img src="https://github.com/Hemmingsson/Freeze/raw/master/resources/CWS-dl.png" width="320">
