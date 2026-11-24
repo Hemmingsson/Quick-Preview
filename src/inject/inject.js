@@ -117,6 +117,7 @@ var failedPreview = function () {
   // Message to be displayed
   var errorMessage = '😵 No Preview Avalible'
   // Title Element
+  if (!currentPreview) return
   var titleElm = currentPreview.titleElm
   // Check if title elm is pressent & errorMessage is not already applyed
   if (titleElm && titleElm.innerText !== errorMessage) {
@@ -170,11 +171,13 @@ var sampleHandeling = function () {
 
 var getAndSetPreviewPlayerSrc = function () {
   // Get stream url
-  resolveSoundCloudUrl(currentPreview.url).then(function (trackData) {
-    if (!trackData) failedPreview()
-    if (!currentPreview) return
+  var preview = currentPreview
+  resolveSoundCloudUrl(preview.url).then(function (trackData) {
+    if (currentPreview !== preview) return
+    if (!trackData) { failedPreview(); return }
     var streamUrl = getStreamUrl(trackData)
     // set Stream Url
+    if (!streamUrl) { failedPreview(); return }
     setPreviewPlayerSrc(streamUrl)
     // Save stream url on elm to reduce requsts
     currentPreview.wrapperElm.setAttribute('data-streamurl', streamUrl)
@@ -182,6 +185,7 @@ var getAndSetPreviewPlayerSrc = function () {
 }
 
 var setPreviewPlayerSrc = function (src) {
+  if (!src) { previewPlayer.pause(); previewPlayer.removeAttribute('src'); previewPlayer.load(); return }
   previewPlayer.src = src
 }
 
@@ -197,6 +201,7 @@ previewPlayer.addEventListener('loadedmetadata', function () {
 
 previewPlayer.addEventListener('playing', function () {
    // Remove Loading animation
+  if (!currentPreview || !currentPreview.circleIndicator) return
   currentPreview.circleIndicator.classList.remove('pulse')
 })
 
@@ -205,12 +210,14 @@ previewPlayer.addEventListener('canplay', function () {
   // Pause Soundcloud Player
   playSoundCloudPlayer(false)
   // Play Preview Player
-  previewPlayer.play()
+  var preview = currentPreview
+  previewPlayer.play().catch(function () { if (currentPreview === preview) failedPreview() })
   // Update Duration Indicators
   progressAnimationFrame = requestAnimationFrame(updateProgressBars)
 })
 
 previewPlayer.addEventListener('timeupdate', sampleHandeling)
+previewPlayer.addEventListener('error', failedPreview)
 
 /* ==========================================================================
 Preview Duration
@@ -226,7 +233,10 @@ var createDurationWave = function () {
   currentPreview.durationIndicator.classList.add('durationWave')
   currentPreview.waveElm.append(currentPreview.durationIndicator)
   // Get wave image
-  var durationImage = currentPreview.wrapperElm.getElementsByTagName('canvas')[0].toDataURL()
+  var canvas = currentPreview.wrapperElm.getElementsByTagName('canvas')[0]
+  if (!canvas) return
+  var durationImage
+  try { durationImage = canvas.toDataURL() } catch (error) { return }
   // Create Duration Progress elm
   var durationProgress = document.createElement('div')
   durationProgress.classList.add('durationWaveProgress')
@@ -302,11 +312,13 @@ Soundcloud Interface
 ========================================================================== */
 
 var isSoundCloudPlaying = function () {
-  return document.body.getElementsByClassName('playControl')[0].classList.contains('playing')
+  var control = document.body.getElementsByClassName('playControl')[0]
+  return !!control && control.classList.contains('playing')
 }
 
 var playSoundCloudPlayer = function (play) {
   var playBtn = document.body.getElementsByClassName('playControl')[0]
+  if (!playBtn) return
   if (play && !isSoundCloudPlaying()) { playBtn.click() } // Play
   if (!play && isSoundCloudPlaying()) { playBtn.click() } // Pause
 }
@@ -327,17 +339,19 @@ Soundcloud Api
 ========================================================================== */
 
 var resolveSoundCloudUrl = function (url) {
-  var resolveURL = 'https://api.soundcloud.com/resolve?url=' + url + '&' + clientID
+  var resolveURL = 'https://api.soundcloud.com/resolve?url=' + encodeURIComponent(url) + '&' + clientID
   return new Promise(function (resolve, reject) {
     var request = new XMLHttpRequest()
     request.open('GET', resolveURL, true)
     request.onload = function () {
       if (request.status >= 200 && request.status < 400) {
-        resolve(JSON.parse(request.responseText))
+        try { resolve(JSON.parse(request.responseText)) } catch (error) { resolve(null) }
       } else {
         resolve(null)
       }
     }
+    request.timeout = 10000
+    request.onerror = request.ontimeout = request.onabort = function () { resolve(null) }
     request.send()
   })
 }
@@ -348,7 +362,7 @@ var getStreamUrl = function (trackData) {
     streamUrl = trackData.stream_url
   }
   if (trackData.kind === 'playlist') {
-    streamUrl = trackData.tracks[0].stream_url
+    streamUrl = trackData.tracks && trackData.tracks[0] && trackData.tracks[0].stream_url
   }
   if (streamUrl) return streamUrl + '?' + clientID
 }
