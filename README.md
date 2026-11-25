@@ -7,7 +7,15 @@ Hover a play button to hear a few samples. Pick how many and how long in the pre
 
 ## Install
 
-[Get it on the Chrome Web Store](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp).
+<a href="https://chromewebstore.google.com/detail/lghceigagnfccdnkpdfbbhjjegijbjmp"><img src="assets/badges/chrome-web-store.png" width="206" alt="Available in the Chrome Web Store"></a>
+
+| Browser | Store | Direct download |
+| --- | --- | --- |
+| Chrome | [Chrome Web Store](https://chromewebstore.google.com/detail/lghceigagnfccdnkpdfbbhjjegijbjmp) | [ZIP](releases/quick-preview-2.0.2-chrome.zip) — unzip and load unpacked |
+| Firefox | Coming soon | [ZIP](releases/quick-preview-2.0.2-firefox.zip) — temporary install for testing |
+| Safari | Coming soon | [Mac app](releases/quick-preview-2.0.2-safari-macos.zip) — Developer ID signed; not notarized |
+
+[Install downloaded builds](docs/install.md).
 
 ## Development
 
