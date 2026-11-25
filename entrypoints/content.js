@@ -120,7 +120,7 @@ function preview(button, card, title, url, { samples, seconds }) {
           if (pausedTrack) main.click()
         }
       }
-      display.update((sampleIndex + fraction) / samples, currentPosition / trackDuration, sampleIndex)
+      display.update(fraction, currentPosition / trackDuration, sampleIndex)
       if (currentPosition < target + length) return
       sampleIndex++
       if (sampleIndex === ranges.length) return stop()

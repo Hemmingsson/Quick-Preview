@@ -6,15 +6,11 @@
 /* renderAt seeks the reveal and pulse at the exact exported frame. */
 #markers .qp-segment, #markers .qp-segment::before, #markers .qp-segment::after {animation:none;transition:none}
 #markers .qp-segment::before {opacity:var(--pulse,1)}
-*{margin:0} #scene{width:2560px;height:1300px;overflow:hidden;border-radius:60px} svg{display:block}</style>
+*{margin:0} #scene{width:1920px;height:975px;overflow:hidden;border-radius:45px} svg{display:block}</style>
 </head><body>
-<div id="scene" data-composition-id="main" data-start="0" data-duration="10" data-width="2560" data-height="1300">
-<svg width="2560" height="1300" viewBox="22 37 1676 851" xmlns="http://www.w3.org/2000/svg">
-  <image href="assets/readme-art.png" width="1728" height="902"/>
-  <!-- Replace the baked-in cursor and button so each can move independently. -->
-  <rect x="354" y="410" width="66" height="95" fill="white"/>
-  <circle cx="384" cy="440" r="25" fill="#ff5700"/>
-  <path d="m378 427 15 13-15 13 4-13z" fill="white"/>
+<div id="scene" data-composition-id="main" data-start="0" data-duration="10" data-width="1920" data-height="975">
+<svg width="1920" height="975" viewBox="22 37 1676 851" xmlns="http://www.w3.org/2000/svg">
+  <image href="assets/readme-art.svg#animation" width="1728" height="902"/>
   <circle id="ring" cx="384" cy="440" r="29" fill="none" stroke="#ff5700" stroke-width="3.5" stroke-linecap="round" pathLength="1" stroke-dasharray="1" transform="rotate(-90 384 440)"/>
   <foreignObject x="359" y="498" width="785" height="78">
     <div xmlns="http://www.w3.org/1999/xhtml" id="markers" class="qp-wave"
@@ -47,7 +43,9 @@ function renderAt(t) {
   byId('cursor').setAttribute('transform', `translate(${x} ${y})`);
   byId('arrow').style.display = hovering ? 'none' : '';
   byId('hand').style.display = hovering ? '' : 'none';
-  const progress = clamp((t-1.75)/6.8);
+  const sampleDuration = (8.55 - 1.3) / sampleCount;
+  const samplesPlayed = (t - 1.3) / sampleDuration;
+  const progress = clamp(samplesPlayed / sampleCount);
   const fade = 1-ease((t-8.65)/.32);
   byId('ring').style.opacity = ease((t-1.3)/.25)*fade;
   byId('ring').style.strokeDashoffset = 1-progress;
@@ -55,9 +53,10 @@ function renderAt(t) {
     const reveal = ease((t - 1.3 - i*.055) / .24);
     marker.style.transform = `scaleX(${reveal})`;
     marker.style.opacity = fade;
-    const playing = t >= 1.75 && i === Math.min(3, Math.floor(progress*sampleCount));
+    const playing = i === Math.min(sampleCount - 1, Math.floor(progress*sampleCount));
     marker.classList.toggle('qp-playing', playing);
-    const elapsed = t - 1.75 - i*1.7;
+    marker.style.setProperty('--qp-sample-progress', clamp(samplesPlayed - i)*100 + '%');
+    const elapsed = (samplesPlayed - i) * sampleDuration;
     const pulse = .59 + .41*Math.cos(2*Math.PI*elapsed/.8);
     marker.style.setProperty('--pulse', playing ? pulse : 1);
   });

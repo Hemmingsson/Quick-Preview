@@ -21,18 +21,20 @@
   border-radius: 0 0 2px 2px;
   corner-shape: superellipse(2);
   box-shadow: 0 1px 2px color-mix(in srgb, var(--black-color, #121212) 25%, transparent);
-  background: color-mix(in srgb, var(--primary-color, currentColor) 85%, var(--special-color, #f50));
+  background-color: white;
+  background-image: linear-gradient(#f50, #f50);
+  background-size: var(--qp-sample-progress, 0%) 100%;
+  background-repeat: no-repeat;
 }
 
 .qp-segment.qp-playing { --qp-tint: var(--special-color, #f50); }
-.qp-segment.qp-playing::after { background-color: var(--special-color, #f50); }
 
 @media (prefers-reduced-motion: no-preference) {
   .qp-wave .qp-segment {
     transform-origin: left center;
     animation: qp-reveal 240ms ease-out calc(var(--qp-order, 0) * 55ms) backwards;
   }
-  .qp-wave .qp-segment::after { transition: background-color 180ms ease-out; }
+  .qp-wave .qp-segment::after { transition: background-size 200ms linear; }
   .qp-wave .qp-segment.qp-playing::before {
     animation: qp-playing-pulse 800ms ease-in-out infinite;
   }
