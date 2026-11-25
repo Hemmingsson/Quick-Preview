@@ -7,6 +7,15 @@
   display: block;
   pointer-events: none;
 }
+.sc-button-play:has(> .qp-ring) {
+  /* Keep the full button hit area while the preview draws a smaller disc. */
+  background: transparent !important;
+  border-color: transparent !important;
+}
+.sc-button-play:has(> .qp-ring)::before,
+.sc-button-play:has(> .qp-ring)::after {
+  opacity: 0;
+}
 .sc-button-play > span.qp-ring {
   margin: 0;
   padding: 0;
@@ -15,9 +24,9 @@
   inset: 0;
   overflow: hidden;
   border-radius: 50%;
-  background: var(--button-special-background-color, var(--special-color, #f50));
+  background: radial-gradient(closest-side, var(--qp-ring-color) 83%, transparent 85%);
   isolation: isolate;
-  --qp-ring-color: color-mix(in srgb, var(--button-special-background-color, var(--special-color, #f50)) 45%, var(--black-color, #121212));
+  --qp-ring-color: var(--button-special-background-color, var(--special-color, #f50));
 }
 .qp-ring::before, .qp-ring::after {
   content: '';
@@ -28,10 +37,10 @@
   inset: 0;
   border-radius: inherit;
   background: conic-gradient(var(--qp-ring-color) var(--qp-sweep, 0turn), transparent 0);
-  mask-image: radial-gradient(closest-side, transparent 83%, black 86%);
+  mask-image: radial-gradient(closest-side, transparent 92%, black 94%);
 }
 .qp-ring::after {
-  inset: 25% 29% 25% 38%;
+  inset: 29% 32% 29% 40%;
   background: var(--button-special-font-color, #fff);
   clip-path: polygon(0 0, 100% 50%, 0 100%, 19% 50%);
 }

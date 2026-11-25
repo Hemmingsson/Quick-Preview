@@ -1,3 +1,5 @@
+<img src="public/icons/icon128.png" width="96" height="96" alt="Quick Preview">
+
 # Quick Preview for SoundCloud
 
 Quickly check out tracks and mixes before you hit play.
