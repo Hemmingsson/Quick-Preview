@@ -1,32 +1,23 @@
-# Quick Preview for Soundcloud [![Version](https://img.shields.io/chrome-web-store/v/lghceigagnfccdnkpdfbbhjjegijbjmp.svg)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp) [![Version](https://img.shields.io/chrome-web-store/stars/lghceigagnfccdnkpdfbbhjjegijbjmp.svg)](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp)
+# Quick Preview for SoundCloud
 
+Quickly check out tracks and mixes before you hit play.
+Hover a play button to hear a few samples. Pick how many and how long in the preferences.
 
+![Quick Preview for SoundCloud](https://i.imgur.com/YFPk7VO.jpg)
 
-	
+## Install
 
-
-
-
-![Screen Shot](https://i.imgur.com/YFPk7VO.jpg)
-
-
-
-Quickly evaluate tracks & mixtapes before you hit play.<br>
-Choose the number of sample points, and their duration, in the preference menu.<br>
-Listen to the samples by hovering (almost) any play button on SoundCloud.
-
-
-
-## How To Install
-
-Install the extension through Chrome Web Store
-
-<a href="https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp">
-    <img src="https://github.com/Hemmingsson/Freeze/raw/master/resources/CWS-dl.png" width="320">
- </a>
-
-[Visual guide to the extension](docs/architecture.md)
+[Get it on the Chrome Web Store](https://chrome.google.com/webstore/detail/quick-preview-for-soundcl/lghceigagnfccdnkpdfbbhjjegijbjmp).
 
 ## Development
 
-Run `npm ci` and `npm run build`, then choose **Load unpacked** in `chrome://extensions` and select `.output/chrome-mv3/`. Refresh SoundCloud after loading or reloading the extension. This development build uses Svelte, WXT, and the SoundCloud widget for playback.
+```sh
+npm ci
+npm run build
+```
+
+Open `chrome://extensions`, turn on **Developer mode**, and **Load unpacked** → `.output/chrome-mv3/`. Refresh SoundCloud and you're ready.
+
+`npm run dev` for development, `npm test` to run the tests.
+
+[Usage](docs/usage.md) · [How it works](docs/architecture.md) · [Development notes](docs/development.md)

@@ -4,14 +4,14 @@
   height: var(--qp-wave-height, 100%);
   min-width: 20px;
   box-sizing: border-box;
-  --qp-tint: 255 255 255;
+  --qp-tint: var(--primary-color, currentColor);
   pointer-events: none;
 }
 .qp-segment::before {
   content: '';
   position: absolute;
   inset: 0;
-  background: linear-gradient(to top, rgb(var(--qp-tint) / 48%), transparent 80%);
+  background: linear-gradient(to top, color-mix(in srgb, var(--qp-tint) 48%, transparent), transparent 80%);
 }
 .qp-segment::after {
   content: '';
@@ -20,12 +20,12 @@
   height: min(4px, 100%);
   border-radius: 0 0 2px 2px;
   corner-shape: superellipse(2);
-  box-shadow: 0 1px 2px rgb(50 25 10 / 25%);
-  background: #fff5ee;
+  box-shadow: 0 1px 2px color-mix(in srgb, var(--black-color, #121212) 25%, transparent);
+  background: color-mix(in srgb, var(--primary-color, currentColor) 85%, var(--special-color, #f50));
 }
 
-.qp-segment.qp-playing { --qp-tint: 255 85 0; }
-.qp-segment.qp-playing::after { background-color: #ff5500; }
+.qp-segment.qp-playing { --qp-tint: var(--special-color, #f50); }
+.qp-segment.qp-playing::after { background-color: var(--special-color, #f50); }
 
 @media (prefers-reduced-motion: no-preference) {
   .qp-wave .qp-segment {

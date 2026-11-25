@@ -1,5 +1,7 @@
 # Quick Preview architecture
 
+[← README](../README.md) · [Usage](usage.md) · [Development](development.md)
+
 Hovering a SoundCloud play button auditions a track in a separate embedded player. The page’s own player keeps its place in the queue.
 
 ## What the listener sees
@@ -36,7 +38,7 @@ Stopping removes the iframe, indicators, timers and message listener. A late rep
 | Playback, cancellation or widget messages | [content.js](../entrypoints/content.js) · [widget.js](../lib/widget.js) |
 
 <details>
-<summary>Rebuild the figures</summary>
+<summary id="rebuild-the-figures">Rebuild the figures</summary>
 
 The [diagram sources](../demo/diagrams/) use SeeCode for technical diagrams and Python for the wireframe. Install `resvg`, then set `SEECODE_CLI` to your SeeCode skill’s `scripts/seecode.mjs` and run these commands from the repository root.
 
