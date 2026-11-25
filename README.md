@@ -12,7 +12,7 @@ Hover a play button to hear a few samples. Pick how many and how long in the pre
 | Browser | Store | Direct download |
 | --- | --- | --- |
 | Chrome | [Chrome Web Store](https://chromewebstore.google.com/detail/lghceigagnfccdnkpdfbbhjjegijbjmp) | [ZIP](releases/quick-preview-2.0.2-chrome.zip) — unzip and load unpacked |
-| Firefox | Coming soon | [ZIP](releases/quick-preview-2.0.2-firefox.zip) — temporary install for testing |
+| Firefox | [Firefox Add-ons](https://addons.mozilla.org/firefox/addon/quick-preview-for-soundcloud/) — submitted | [ZIP](releases/quick-preview-2.0.2-firefox.zip) — temporary install for testing |
 | Safari | Coming soon | [Mac app](releases/quick-preview-2.0.2-safari-macos.zip) — Developer ID signed; not notarized |
 
 [Install downloaded builds](docs/install.md).
