@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Wireframes"
+  short_description: "UI wireframes matching this repository's documentation"
+  default_prompt: "Use $create-wireframe to explain a UI feature in this repository's documentation style."

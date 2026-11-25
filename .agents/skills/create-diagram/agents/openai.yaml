@@ -1,0 +1,4 @@
+interface:
+  display_name: "Project Diagrams"
+  short_description: "Technical diagrams matching this repository's documentation"
+  default_prompt: "Use $create-diagram to create a technical documentation diagram in this repository's style."

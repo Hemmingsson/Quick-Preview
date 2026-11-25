@@ -1,0 +1,12 @@
+{
+  "watermark": false,
+  "fonts": "system",
+  "controls": false,
+  "outputDir": "../../assets/diagrams",
+  "brand": {
+    "ink": "#050505",
+    "accent": "#050505",
+    "link": "#050505",
+    "paper": "#ffffff"
+  }
+}

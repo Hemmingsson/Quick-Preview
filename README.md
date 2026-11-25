@@ -25,3 +25,8 @@ Install the extension through Chrome Web Store
     <img src="https://github.com/Hemmingsson/Freeze/raw/master/resources/CWS-dl.png" width="320">
  </a>
 
+[Visual guide to the extension](docs/architecture.md)
+
+## Development
+
+Run `npm ci` and `npm run build`, then choose **Load unpacked** in `chrome://extensions` and select `.output/chrome-mv3/`. Refresh SoundCloud after loading or reloading the extension. This development build uses Svelte, WXT, and the SoundCloud widget for playback.

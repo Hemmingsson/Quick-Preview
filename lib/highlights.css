@@ -1,0 +1,56 @@
+.qp-segment {
+  position: absolute;
+  inset-block: 0 auto;
+  height: var(--qp-wave-height, 100%);
+  min-width: 20px;
+  box-sizing: border-box;
+  --qp-tint: 255 255 255;
+  pointer-events: none;
+}
+.qp-segment::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgb(var(--qp-tint) / 48%), transparent 80%);
+}
+.qp-segment::after {
+  content: '';
+  position: absolute;
+  inset: 100% 0 auto;
+  height: min(4px, 100%);
+  border-radius: 0 0 2px 2px;
+  corner-shape: superellipse(2);
+  box-shadow: 0 1px 2px rgb(50 25 10 / 25%);
+  background: #fff5ee;
+}
+
+.qp-segment.qp-playing { --qp-tint: 255 85 0; }
+.qp-segment.qp-playing::after { background-color: #ff5500; }
+
+@media (prefers-reduced-motion: no-preference) {
+  .qp-wave .qp-segment {
+    transform-origin: left center;
+    animation: qp-reveal 240ms ease-out calc(var(--qp-order, 0) * 55ms) backwards;
+  }
+  .qp-wave .qp-segment::after { transition: background-color 180ms ease-out; }
+  .qp-wave .qp-segment.qp-playing::before {
+    animation: qp-playing-pulse 800ms ease-in-out infinite;
+  }
+  .qp-buffering .qp-segment::before {
+    animation: qp-beat 700ms ease-in-out infinite alternate;
+  }
+}
+
+@keyframes qp-reveal {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+@keyframes qp-beat {
+  from { opacity: 1; }
+  to { opacity: .5; }
+}
+
+@keyframes qp-playing-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: .18; }
+}
