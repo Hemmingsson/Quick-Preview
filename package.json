@@ -9,7 +9,8 @@
     "pretest": "npm run build",
     "test": "node --test",
     "build:firefox": "wxt build -b firefox --mv3",
-    "build:safari": "wxt build -b safari --mv3"
+    "build:safari": "wxt build -b safari --mv3",
+    "demo:export": "bash demo-video/export.sh"
   },
   "devDependencies": {
     "@wxt-dev/module-svelte": "^2.0.5",
