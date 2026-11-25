@@ -1,0 +1,107 @@
+{
+  "watermark": false,
+  "fonts": "system",
+  "legend": false,
+  "eyebrow": "",
+  "motion": "none",
+  "skin": "light",
+  "type": "dependency",
+  "dir": "TB",
+  "title": "Quick Preview components",
+  "subtitle": "Arrows point to the components each part uses.",
+  "nodes": [
+    {
+      "id": "popup",
+      "label": "Toolbar popup",
+      "sub": "Svelte preferences",
+      "row": 0,
+      "col": 0
+    },
+    {
+      "id": "hover",
+      "label": "Hover controller",
+      "sub": "On soundcloud.com",
+      "row": 0,
+      "col": 2,
+      "focal": true
+    },
+    {
+      "id": "shared",
+      "label": "Settings & ranges",
+      "sub": "Shared by both views",
+      "row": 1,
+      "col": 0
+    },
+    {
+      "id": "display",
+      "label": "Indicators",
+      "sub": "Ring and waveform",
+      "row": 1,
+      "col": 2
+    },
+    {
+      "id": "bridge",
+      "label": "Widget bridge",
+      "sub": "postMessage",
+      "row": 1,
+      "col": 4
+    },
+    {
+      "id": "store",
+      "label": "Browser storage",
+      "sub": "Samples and seconds",
+      "row": 2,
+      "col": 0,
+      "kind": "store"
+    },
+    {
+      "id": "widget",
+      "label": "SoundCloud widget",
+      "sub": "Embedded audio player",
+      "row": 2,
+      "col": 4,
+      "kind": "external"
+    }
+  ],
+  "edges": [
+    [
+      "popup",
+      "shared"
+    ],
+    [
+      "hover",
+      "shared"
+    ],
+    [
+      "hover",
+      "display"
+    ],
+    [
+      "hover",
+      "bridge"
+    ],
+    [
+      "shared",
+      "store"
+    ],
+    [
+      "bridge",
+      "widget"
+    ]
+  ],
+  "evidence": [
+    {
+      "id": "popup",
+      "file": "entrypoints/popup/Popup.svelte"
+    },
+    {
+      "id": "hover",
+      "file": "entrypoints/content.js"
+    },
+    {
+      "id": "bridge",
+      "file": "lib/widget.js"
+    }
+  ],
+  "out": "../../assets/diagrams/extension-map.html"
+}

@@ -1,11 +1,17 @@
 {
-  "name": "quick-preview",
-  "version": "1.0.0",
+  "name": "quick-preview-for-soundcloud",
+  "version": "1.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "test": "node --test test/*.test.cjs"
+    "build": "wxt build -b chrome --mv3",
+    "dev": "wxt -b chrome --mv3",
+    "pretest": "npm run build",
+    "test": "node --test"
   },
-  "engines": {
-    "node": ">=22"
+  "devDependencies": {
+    "@wxt-dev/module-svelte": "^2.0.5",
+    "svelte": "^5.59.1",
+    "wxt": "^0.21.5"
   }
 }

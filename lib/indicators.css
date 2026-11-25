@@ -1,0 +1,72 @@
+@import './highlights.css';
+.qp-wave-anchor, .qp-button-anchor { position: relative; }
+.qp-ring, .qp-wave {
+  position: absolute;
+  inset: 0;
+  z-index: 5;
+  display: block;
+  pointer-events: none;
+}
+.sc-button-play > span.qp-ring {
+  margin: 0;
+  padding: 0;
+  display: block;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  background: #ff5500;
+  isolation: isolate;
+}
+.qp-ring::before, .qp-ring::after {
+  content: '';
+  position: absolute;
+  pointer-events: none;
+}
+.qp-ring::before {
+  inset: 0;
+  border-radius: inherit;
+  background: conic-gradient(#ffbb94 var(--qp-sweep, 0turn), transparent 0);
+  mask-image: radial-gradient(closest-side, transparent 83%, black 86%);
+}
+.qp-ring::after {
+  inset: 25% 29% 25% 38%;
+  background: white;
+  clip-path: polygon(0 0, 100% 50%, 0 100%, 19% 50%);
+}
+.qp-ring.qp-loading::before {
+  background: white;
+  animation: qp-pulse 300ms ease-out infinite alternate;
+}
+@keyframes qp-pulse { from { opacity: .5; } to { opacity: 1; } }
+.qp-wave {
+  --qp-wave-height: 66.6667%;
+  overflow: hidden;
+}
+.qp-played-wave {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: .3;
+  clip-path: inset(0 100% 0 0);
+}
+.qp-compact .qp-segment::after { top: 0; }
+.qp-wave.qp-compact {
+  top: auto;
+  height: 3px;
+  background: rgb(128 128 128 / 45%);
+}
+/* Keep the media frame rendered so the widget continues reporting progress. */
+.qp-player {
+  position: fixed;
+  inset: auto 0 0 auto;
+  width: 2px;
+  height: 2px;
+  opacity: 0;
+  border: 0;
+  pointer-events: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  .qp-ring.qp-loading::before { animation: none; }
+}

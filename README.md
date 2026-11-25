@@ -25,9 +25,8 @@ Install the extension through Chrome Web Store
     <img src="https://github.com/Hemmingsson/Freeze/raw/master/resources/CWS-dl.png" width="320">
  </a>
 
+[Visual guide to the extension](docs/architecture.md)
 
-## Source compatibility
+## Development
 
-The source manifest now uses Manifest V3. To inspect it, enable Developer mode at `chrome://extensions`, select **Load unpacked**, and choose `src/`. Historical release ZIPs are unchanged.
-
-The anonymous SoundCloud API integration is legacy code. Current SoundCloud API access requires OAuth credentials, so live track lookup and playback are not verified. See the [SoundCloud API guide](https://developers.soundcloud.com/docs/api/guide).
+Run `npm ci` and `npm run build`, then choose **Load unpacked** in `chrome://extensions` and select `.output/chrome-mv3/`. Refresh SoundCloud after loading or reloading the extension. This development build uses Svelte, WXT, and the SoundCloud widget for playback.

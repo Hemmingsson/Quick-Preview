@@ -1,0 +1,92 @@
+{
+  "watermark": false,
+  "fonts": "system",
+  "legend": false,
+  "eyebrow": "",
+  "motion": "none",
+  "skin": "light",
+  "type": "sequence",
+  "title": "One hover preview",
+  "subtitle": "Playback starts after the embedded widget reports a valid track duration.",
+  "participants": [
+    {
+      "id": "page",
+      "label": "SoundCloud page"
+    },
+    {
+      "id": "hover",
+      "label": "Hover controller",
+      "focal": true
+    },
+    {
+      "id": "widget",
+      "label": "Widget player",
+      "kind": "external"
+    }
+  ],
+  "messages": [
+    [
+      "page",
+      "hover",
+      "Hover play button"
+    ],
+    [
+      "hover",
+      "page",
+      "Show sample markers"
+    ],
+    [
+      "hover",
+      "widget",
+      "Open track URL"
+    ],
+    [
+      "widget",
+      "hover",
+      "Ready + duration",
+      "reply"
+    ],
+    [
+      "hover",
+      "widget",
+      "Seek and play"
+    ],
+    [
+      "hover",
+      "widget",
+      "Read position every 250 ms"
+    ],
+    [
+      "widget",
+      "hover",
+      "Position advances",
+      "reply"
+    ],
+    [
+      "hover",
+      "page",
+      "Pause playing track"
+    ],
+    [
+      "hover",
+      "page",
+      "Update preview markers"
+    ],
+    [
+      "hover",
+      "widget",
+      "Seek to next sample"
+    ]
+  ],
+  "evidence": [
+    {
+      "id": "hover",
+      "file": "entrypoints/content.js"
+    },
+    {
+      "id": "widget",
+      "file": "lib/widget.js"
+    }
+  ],
+  "out": "../../assets/diagrams/preview-sequence.html"
+}
